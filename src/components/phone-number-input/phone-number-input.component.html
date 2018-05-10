@@ -1,0 +1,13 @@
+<div class="input-group">
+  <div class="input-group-prepend" dropdown (isOpenChange)="isOpenChange($event)">
+    <button dropdownToggle type="button" class="btn btn-outline-secondary dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      +{{ country?.dialCode }}
+    </button>
+    <div *dropdownMenu class="dropdown-menu">
+      <button *ngFor="let country of countries | countrySearch: filter" class="dropdown-item" (click)="setCountry(country)" type="button">
+        <span>+{{country.dialCode}}</span> {{country.name}}
+      </button>
+    </div>
+  </div>
+  <input type="text" [value]="number" (input)="onNumberInput($event.target.value)" (blur)="onNumberBlur()" class="form-control form-control-xs">
+</div>

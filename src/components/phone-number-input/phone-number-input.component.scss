@@ -1,0 +1,15 @@
+.dropdown-menu {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.dropdown-item {
+  padding-left: 1rem;
+  padding-right: 2rem;
+
+  span {
+    color: grey;
+    min-width: 3rem;
+    display: inline-block;
+  }
+}
